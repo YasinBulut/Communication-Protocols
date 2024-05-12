@@ -8,12 +8,12 @@ Siemens Tia Portal V17
 S7-PLCSIM Advanced V4.0
 Nettoplcsim-S7o-v-1-2-5-0
 
-
-
-!!NOTE
-The communication settings are located in the information section within the application.
+Note: The communication settings are located in the 
+information section within the application.
 Carry out your work according to the commands found there.
 
+!!!!!Warning!!!!!
+The project is still under development. There may be deficiencies.
 
 yasinbulut_25@hotmail.com
 https://www.linkedin.com/in/yasinbulut/
