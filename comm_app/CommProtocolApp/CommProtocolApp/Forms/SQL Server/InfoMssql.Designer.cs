@@ -33,13 +33,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.txtadress = new DevExpress.XtraEditors.MemoEdit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtadress.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtadress);
             this.panel1.Location = new System.Drawing.Point(13, 83);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(467, 318);
@@ -76,6 +80,16 @@
             this.groupControl1.TabIndex = 9;
             this.groupControl1.Text = "groupControl1";
             // 
+            // txtadress
+            // 
+            this.txtadress.EditValue = "";
+            this.txtadress.Location = new System.Drawing.Point(3, 8);
+            this.txtadress.Name = "txtadress";
+            this.txtadress.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtadress.Properties.Appearance.Options.UseFont = true;
+            this.txtadress.Size = new System.Drawing.Size(460, 303);
+            this.txtadress.TabIndex = 22;
+            // 
             // InfoMssql
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -86,10 +100,12 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InfoMssql";
             this.Text = "Info MSSQL";
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtadress.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -100,5 +116,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.MemoEdit txtadress;
     }
 }

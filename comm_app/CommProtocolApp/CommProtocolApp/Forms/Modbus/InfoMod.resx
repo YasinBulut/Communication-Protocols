@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="txtadress.EditValue" xml:space="preserve">
+    <value>In order to establish Modbus communication correctly within the application, there needs to be a minimum of 18 data entries in the database. (The reason being that the application retrieves 18 data entries.) The PLC acts as the master, while C# serves as the slave. I'm making this distinction in C# code currently, embedded within the software. However, I plan to revise it later to offer this choice to the user. I'm implementing this differentiation using the "EasyModbus" library in C#.</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

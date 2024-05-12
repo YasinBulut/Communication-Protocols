@@ -28,15 +28,15 @@ namespace CommProtocolApp.Forms.OPC_UA
         private void btndataread_Click(object sender, EventArgs e)
         {
             string opcURL = "opc.tcp://195.168.0.1:4840";
-            var data1 = "ns=4;i=108"; var data10 = "ns=4;i=117"; var data19 = "ns=4;i=96"; var data28 = "ns=4;i=107";
-            var data2 = "ns=4;i=109"; var data11 = "ns=4;i=118"; var data20 = "ns=4;i=97"; var data29 = "ns=4;i=133";
-            var data3 = "ns=4;i=110"; var data12 = "ns=4;i=119"; var data21 = "ns=4;i=98"; var data30 = "ns=4;i=134";
-            var data4 = "ns=4;i=111"; var data13 = "ns=4;i=120"; var data22 = "ns=4;i=99"; var data31 = "ns=4;i=127";
-            var data5 = "ns=4;i=112"; var data14 = "ns=4;i=121"; var data23 = "ns=4;i=100"; var data32 = "ns=4;i=128";
-            var data6 = "ns=4;i=113"; var data15 = "ns=4;i=122"; var data24 = "ns=4;i=101"; var data33 = "ns=4;i=129";
-            var data7 = "ns=4;i=114"; var data16 = "ns=4;i=123"; var data25 = "ns=4;i=102"; var data34 = "ns=4;i=130";
-            var data8 = "ns=4;i=115"; var data17 = "ns=4;i=124"; var data26 = "ns=4;i=103"; var data35 = "ns=4;i=131";
-            var data9 = "ns=4;i=116"; var data18 = "ns=4;i=95"; var data27 = "ns=4;i=104"; var data36 = "ns=4;i=132";
+            var data1 = "ns=4;i=30"; var data10 = "ns=4;i=39"; var data19 = "ns=4;i=48"; var data28 = "ns=4;i=57";
+            var data2 = "ns=4;i=31"; var data11 = "ns=4;i=40"; var data20 = "ns=4;i=49"; var data29 = "ns=4;i=58";
+            var data3 = "ns=4;i=32"; var data12 = "ns=4;i=41"; var data21 = "ns=4;i=50"; var data30 = "ns=4;i=59";
+            var data4 = "ns=4;i=33"; var data13 = "ns=4;i=42"; var data22 = "ns=4;i=51"; var data31 = "ns=4;i=60";
+            var data5 = "ns=4;i=34"; var data14 = "ns=4;i=43"; var data23 = "ns=4;i=52"; var data32 = "ns=4;i=61";
+            var data6 = "ns=4;i=35"; var data15 = "ns=4;i=44"; var data24 = "ns=4;i=53"; var data33 = "ns=4;i=62";
+            var data7 = "ns=4;i=36"; var data16 = "ns=4;i=45"; var data25 = "ns=4;i=54"; var data34 = "ns=4;i=63";
+            var data8 = "ns=4;i=37"; var data17 = "ns=4;i=46"; var data26 = "ns=4;i=55"; var data35 = "ns=4;i=64";
+            var data9 = "ns=4;i=38"; var data18 = "ns=4;i=47"; var data27 = "ns=4;i=56"; var data36 = "ns=4;i=65";
             var client = new OpcClient(opcURL);
             client.Connect();
             var value1 = client.ReadNode(data1); var value10 = client.ReadNode(data10); var value19 = client.ReadNode(data19); var value28 = client.ReadNode(data28);
