@@ -1,0 +1,527 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9DF623EA-461C-454F-B0FB-D19B3DC9543F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CommProtocolApp</RootNamespace>
+    <AssemblyName>CommProtocolApp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.6\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.1.UI, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v20.1.UI, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v20.1.Wizard, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EasyModbus, Version=5.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EasyModbusTCP.5.6.0\lib\net40\EasyModbus.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Opc.UaFx.Client, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0220af0d33d50236, processorArchitecture=MSIL">
+      <HintPath>..\packages\Opc.UaFx.Client.2.41.1\lib\net46\Opc.UaFx.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="S7.Net, Version=0.20.0.0, Culture=neutral, PublicKeyToken=d5812d469e84c693, processorArchitecture=MSIL">
+      <HintPath>..\packages\S7netplus.0.20.0\lib\net452\S7.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Primitives, Version=4.5.0.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ServiceModel.Primitives.4.5.3\lib\net461\System.ServiceModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DBCONNDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBCONNDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sp_helpdiagrams_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBLDep.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblFirma.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TblKullanici.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBLMuh.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBLProje.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBLProtokol.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBLSehir.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Tbl_Datax.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Create\FrmEngineer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Create\FrmEngineer.Designer.cs">
+      <DependentUpon>FrmEngineer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Create\FrmProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Create\FrmProject.Designer.cs">
+      <DependentUpon>FrmProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DESCRIBING\DesCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DESCRIBING\DesCompany.Designer.cs">
+      <DependentUpon>DesCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DESCRIBING\DesCountry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DESCRIBING\DesCountry.Designer.cs">
+      <DependentUpon>DesCountry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DESCRIBING\DesCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DESCRIBING\DesCustomer.Designer.cs">
+      <DependentUpon>DesCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DESCRIBING\DesDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DESCRIBING\DesDepartment.Designer.cs">
+      <DependentUpon>DesDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DESCRIBING\DesProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DESCRIBING\DesProject.Designer.cs">
+      <DependentUpon>DesProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DESCRIBING\DesProtocol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DESCRIBING\DesProtocol.Designer.cs">
+      <DependentUpon>DesProtocol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Home\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Home\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\List\ListEngineer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\List\ListEngineer.Designer.cs">
+      <DependentUpon>ListEngineer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Home\InfoProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Home\InfoProject.Designer.cs">
+      <DependentUpon>InfoProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modbus\InfoMod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modbus\InfoMod.Designer.cs">
+      <DependentUpon>InfoMod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modbus\ReadModbus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modbus\ReadModbus.Designer.cs">
+      <DependentUpon>ReadModbus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modbus\WriteModbus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modbus\WriteModbus.Designer.cs">
+      <DependentUpon>WriteModbus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OPC UA\InfoOPCUA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OPC UA\InfoOPCUA.Designer.cs">
+      <DependentUpon>InfoOPCUA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OPC UA\OPCRead.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OPC UA\OPCRead.Designer.cs">
+      <DependentUpon>OPCRead.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OPC UA\OPCWrite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OPC UA\OPCWrite.Designer.cs">
+      <DependentUpon>OPCWrite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\List\ListProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\List\ListProject.Designer.cs">
+      <DependentUpon>ListProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Profinet\InfoProfinet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Profinet\InfoProfinet.Designer.cs">
+      <DependentUpon>InfoProfinet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Profinet\ReadProfinet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Profinet\ReadProfinet.Designer.cs">
+      <DependentUpon>ReadProfinet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Profinet\WriteProfinet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Profinet\WriteProfinet.Designer.cs">
+      <DependentUpon>WriteProfinet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SQL Server\InfoMssql.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SQL Server\InfoMssql.Designer.cs">
+      <DependentUpon>InfoMssql.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\Google.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings\Google.Designer.cs">
+      <DependentUpon>Google.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\Rates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings\Rates.Designer.cs">
+      <DependentUpon>Rates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\Youtube.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings\Youtube.Designer.cs">
+      <DependentUpon>Youtube.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SQL Server\SqlBaglantisi.cs" />
+    <Compile Include="Forms\SQL Server\SqlRead.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SQL Server\SqlRead.Designer.cs">
+      <DependentUpon>SqlRead.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SQL Server\SqlWrite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SQL Server\SqlWrite.Designer.cs">
+      <DependentUpon>SqlWrite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Home\HomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Home\HomePage.Designer.cs">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <EmbeddedResource Include="Forms\Create\FrmEngineer.resx">
+      <DependentUpon>FrmEngineer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Create\FrmProject.resx">
+      <DependentUpon>FrmProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DESCRIBING\DesCompany.resx">
+      <DependentUpon>DesCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DESCRIBING\DesCountry.resx">
+      <DependentUpon>DesCountry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DESCRIBING\DesCustomer.resx">
+      <DependentUpon>DesCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DESCRIBING\DesDepartment.resx">
+      <DependentUpon>DesDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DESCRIBING\DesProject.resx">
+      <DependentUpon>DesProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DESCRIBING\DesProtocol.resx">
+      <DependentUpon>DesProtocol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Home\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\List\ListEngineer.resx">
+      <DependentUpon>ListEngineer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\List\ListProject.resx">
+      <DependentUpon>ListProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modbus\InfoMod.resx">
+      <DependentUpon>InfoMod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modbus\ReadModbus.resx">
+      <DependentUpon>ReadModbus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modbus\WriteModbus.resx">
+      <DependentUpon>WriteModbus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OPC UA\InfoOPCUA.resx">
+      <DependentUpon>InfoOPCUA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OPC UA\OPCRead.resx">
+      <DependentUpon>OPCRead.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OPC UA\OPCWrite.resx">
+      <DependentUpon>OPCWrite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Home\InfoProject.resx">
+      <DependentUpon>InfoProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Profinet\InfoProfinet.resx">
+      <DependentUpon>InfoProfinet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Profinet\ReadProfinet.resx">
+      <DependentUpon>ReadProfinet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Profinet\WriteProfinet.resx">
+      <DependentUpon>WriteProfinet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SQL Server\InfoMssql.resx">
+      <DependentUpon>InfoMssql.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings\Google.resx">
+      <DependentUpon>Google.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings\Rates.resx">
+      <DependentUpon>Rates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings\Youtube.resx">
+      <DependentUpon>Youtube.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SQL Server\SqlRead.resx">
+      <DependentUpon>SqlRead.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SQL Server\SqlWrite.resx">
+      <DependentUpon>SqlWrite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Home\HomePage.resx">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EntityDeploy Include="Entity\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DBCONNDataSet.xsc">
+      <DependentUpon>DBCONNDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DBCONNDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBCONNDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBCONNDataSet.xss">
+      <DependentUpon>DBCONNDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Entity\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entity\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Entity\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\data send3.png" />
+    <None Include="Resources\receive.png" />
+    <None Include="Resources\data send2.png" />
+    <None Include="Resources\data send1.png" />
+    <None Include="Resources\data send.png" />
+    <None Include="Resources\84aa0e31ffe619b87333afa13c5fdc761.jpg" />
+    <None Include="Resources\MODBUS.png" />
+    <None Include="Resources\OPC.png" />
+    <None Include="Resources\PROFINET_rgb_2010.png" />
+    <None Include="Resources\SQLSERVER.png" />
+    <None Include="Resources\84aa0e31ffe619b87333afa13c5fdc76.jpg" />
+    <None Include="Resources\CİTY.png" />
+    <None Include="Resources\engineer.png" />
+    <None Include="Resources\document.png" />
+    <None Include="Resources\distributed.png" />
+    <None Include="Resources\map.png" />
+    <None Include="Resources\email.png" />
+    <None Include="Resources\hierarchical-structure.png" />
+    <None Include="Resources\mail-icon-2018x2048-0bkdtuf1.png" />
+    <None Include="Resources\lovepik-mobile-phone-icon-png-image_401486772_wh1200.png" />
+    <None Include="Resources\mail-icon-512x419-289bpxr2.png" />
+    <None Include="Resources\E-MAİL.png" />
+    <None Include="Resources\eng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\Report\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
+  </Target>
+</Project>

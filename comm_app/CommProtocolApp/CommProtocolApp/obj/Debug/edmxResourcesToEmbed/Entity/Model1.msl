@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBCONNModelStoreContainer" CdmEntityContainer="DBCONNEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="DBCONNModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblFirma">
+      <EntityTypeMapping TypeName="DBCONNModel.TblFirma">
+        <MappingFragment StoreEntitySet="TblFirma">
+          <ScalarProperty Name="FirmaId" ColumnName="FirmaId" />
+          <ScalarProperty Name="FirmaAd" ColumnName="FirmaAd" />
+          <ScalarProperty Name="FirmaSehir" ColumnName="FirmaSehir" />
+          <ScalarProperty Name="FirmaMail" ColumnName="FirmaMail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblKullanici">
+      <EntityTypeMapping TypeName="DBCONNModel.TblKullanici">
+        <MappingFragment StoreEntitySet="TblKullanici">
+          <ScalarProperty Name="KullaniciId" ColumnName="KullaniciId" />
+          <ScalarProperty Name="KullaniciAd" ColumnName="KullaniciAd" />
+          <ScalarProperty Name="KullaniciSifre" ColumnName="KullaniciSifre" />
+          <ScalarProperty Name="KullaniciFirma" ColumnName="KullaniciFirma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLProje">
+      <EntityTypeMapping TypeName="DBCONNModel.TBLProje">
+        <MappingFragment StoreEntitySet="TBLProje">
+          <ScalarProperty Name="ProjeId" ColumnName="ProjeId" />
+          <ScalarProperty Name="ProjeAd" ColumnName="ProjeAd" />
+          <ScalarProperty Name="ProjeSehir" ColumnName="ProjeSehir" />
+          <ScalarProperty Name="ProjeMuh" ColumnName="ProjeMuh" />
+          <ScalarProperty Name="ProjeProtokol" ColumnName="ProjeProtokol" />
+          <ScalarProperty Name="ProjeAciklama" ColumnName="ProjeAciklama" />
+          <ScalarProperty Name="ProjeDurum" ColumnName="ProjeDurum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLProtokol">
+      <EntityTypeMapping TypeName="DBCONNModel.TBLProtokol">
+        <MappingFragment StoreEntitySet="TBLProtokol">
+          <ScalarProperty Name="ProtokolId" ColumnName="ProtokolId" />
+          <ScalarProperty Name="ProtokAd" ColumnName="ProtokAd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLSehir">
+      <EntityTypeMapping TypeName="DBCONNModel.TBLSehir">
+        <MappingFragment StoreEntitySet="TBLSehir">
+          <ScalarProperty Name="SehirId" ColumnName="SehirId" />
+          <ScalarProperty Name="SehirAd" ColumnName="SehirAd" />
+          <ScalarProperty Name="SehirUlke" ColumnName="SehirUlke" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLDep">
+      <EntityTypeMapping TypeName="DBCONNModel.TBLDep">
+        <MappingFragment StoreEntitySet="TBLDep">
+          <ScalarProperty Name="DepartmentAd" ColumnName="DepartmentAd" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLMuhSet">
+      <EntityTypeMapping TypeName="DBCONNModel.TBLMuh">
+        <MappingFragment StoreEntitySet="TBLMuh">
+          <ScalarProperty Name="MuhAciklama" ColumnName="MuhAciklama" />
+          <ScalarProperty Name="MuhDurum" ColumnName="MuhDurum" />
+          <ScalarProperty Name="MuhAdres" ColumnName="MuhAdres" />
+          <ScalarProperty Name="MuhDepartment" ColumnName="MuhDepartment" />
+          <ScalarProperty Name="MuhPhone" ColumnName="MuhPhone" />
+          <ScalarProperty Name="MuhSifre" ColumnName="MuhSifre" />
+          <ScalarProperty Name="MuhMail" ColumnName="MuhMail" />
+          <ScalarProperty Name="MuhAdSoyad" ColumnName="MuhAdSoyad" />
+          <ScalarProperty Name="MuhId" ColumnName="MuhId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Datax">
+      <EntityTypeMapping TypeName="DBCONNModel.Tbl_Datax">
+        <MappingFragment StoreEntitySet="Tbl_Datax">
+          <ScalarProperty Name="Bool9" ColumnName="Bool9" />
+          <ScalarProperty Name="Bool8" ColumnName="Bool8" />
+          <ScalarProperty Name="Bool7" ColumnName="Bool7" />
+          <ScalarProperty Name="Bool6" ColumnName="Bool6" />
+          <ScalarProperty Name="Bool5" ColumnName="Bool5" />
+          <ScalarProperty Name="Bool4" ColumnName="Bool4" />
+          <ScalarProperty Name="Bool3" ColumnName="Bool3" />
+          <ScalarProperty Name="Bool2" ColumnName="Bool2" />
+          <ScalarProperty Name="Bool1" ColumnName="Bool1" />
+          <ScalarProperty Name="Real9" ColumnName="Real9" />
+          <ScalarProperty Name="Real8" ColumnName="Real8" />
+          <ScalarProperty Name="Real7" ColumnName="Real7" />
+          <ScalarProperty Name="Real6" ColumnName="Real6" />
+          <ScalarProperty Name="Real5" ColumnName="Real5" />
+          <ScalarProperty Name="Real4" ColumnName="Real4" />
+          <ScalarProperty Name="Real3" ColumnName="Real3" />
+          <ScalarProperty Name="Real2" ColumnName="Real2" />
+          <ScalarProperty Name="Real1" ColumnName="Real1" />
+          <ScalarProperty Name="Int9" ColumnName="Int9" />
+          <ScalarProperty Name="Int8" ColumnName="Int8" />
+          <ScalarProperty Name="Int7" ColumnName="Int7" />
+          <ScalarProperty Name="Int6" ColumnName="Int6" />
+          <ScalarProperty Name="Int5" ColumnName="Int5" />
+          <ScalarProperty Name="Int4" ColumnName="Int4" />
+          <ScalarProperty Name="Int3" ColumnName="Int3" />
+          <ScalarProperty Name="Int2" ColumnName="Int2" />
+          <ScalarProperty Name="Int1" ColumnName="Int1" />
+          <ScalarProperty Name="Word9" ColumnName="Word9" />
+          <ScalarProperty Name="Word8" ColumnName="Word8" />
+          <ScalarProperty Name="Word7" ColumnName="Word7" />
+          <ScalarProperty Name="Word6" ColumnName="Word6" />
+          <ScalarProperty Name="Word5" ColumnName="Word5" />
+          <ScalarProperty Name="Word4" ColumnName="Word4" />
+          <ScalarProperty Name="Word3" ColumnName="Word3" />
+          <ScalarProperty Name="Word2" ColumnName="Word2" />
+          <ScalarProperty Name="Word1" ColumnName="Word1" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DBCONNModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DBCONNModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="DBCONNModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DBCONNModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBCONNModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="DBCONNModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBCONNModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DBCONNModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DBCONNModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

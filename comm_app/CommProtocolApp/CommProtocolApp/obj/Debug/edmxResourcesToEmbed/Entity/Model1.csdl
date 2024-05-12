@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBCONNModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TblFirma">
+    <Key>
+      <PropertyRef Name="FirmaId" />
+    </Key>
+    <Property Name="FirmaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirmaAd" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="FirmaSehir" Type="Int32" />
+    <Property Name="FirmaMail" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TblKullanici" Relationship="Self.FK_TblKullanici_TblFirma" FromRole="TblFirma" ToRole="TblKullanici" />
+  </EntityType>
+  <EntityType Name="TblKullanici">
+    <Key>
+      <PropertyRef Name="KullaniciId" />
+    </Key>
+    <Property Name="KullaniciId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KullaniciAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="KullaniciSifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="KullaniciFirma" Type="Int32" />
+    <NavigationProperty Name="TblFirma" Relationship="Self.FK_TblKullanici_TblFirma" FromRole="TblKullanici" ToRole="TblFirma" />
+  </EntityType>
+  <EntityType Name="TBLProje">
+    <Key>
+      <PropertyRef Name="ProjeId" />
+    </Key>
+    <Property Name="ProjeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjeAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProjeSehir" Type="Int32" />
+    <Property Name="ProjeMuh" Type="Int32" />
+    <Property Name="ProjeProtokol" Type="Int32" />
+    <Property Name="ProjeAciklama" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProjeDurum" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="TBLProtokol" Relationship="Self.FK_TBLProje_TBLProtokol" FromRole="TBLProje" ToRole="TBLProtokol" />
+    <NavigationProperty Name="TBLSehir" Relationship="Self.FK_TBLProje_TBLSehir" FromRole="TBLProje" ToRole="TBLSehir" />
+    <NavigationProperty Name="TBLMuh" Relationship="DBCONNModel.FK_TBLMuh_TBLProje" FromRole="TBLProje" ToRole="TBLMuh1" />
+  </EntityType>
+  <EntityType Name="TBLProtokol">
+    <Key>
+      <PropertyRef Name="ProtokolId" />
+    </Key>
+    <Property Name="ProtokolId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProtokAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TBLProje" Relationship="Self.FK_TBLProje_TBLProtokol" FromRole="TBLProtokol" ToRole="TBLProje" />
+  </EntityType>
+  <EntityType Name="TBLSehir">
+    <Key>
+      <PropertyRef Name="SehirId" />
+    </Key>
+    <Property Name="SehirId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SehirAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SehirUlke" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TBLProje" Relationship="Self.FK_TBLProje_TBLSehir" FromRole="TBLSehir" ToRole="TBLProje" />
+  </EntityType>
+  <Association Name="FK_TblKullanici_TblFirma">
+    <End Role="TblFirma" Type="Self.TblFirma" Multiplicity="0..1" />
+    <End Role="TblKullanici" Type="Self.TblKullanici" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblFirma">
+        <PropertyRef Name="FirmaId" />
+      </Principal>
+      <Dependent Role="TblKullanici">
+        <PropertyRef Name="KullaniciFirma" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLProje_TBLProtokol">
+    <End Role="TBLProtokol" Type="Self.TBLProtokol" Multiplicity="0..1" />
+    <End Role="TBLProje" Type="Self.TBLProje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLProtokol">
+        <PropertyRef Name="ProtokolId" />
+      </Principal>
+      <Dependent Role="TBLProje">
+        <PropertyRef Name="ProjeProtokol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLProje_TBLSehir">
+    <End Role="TBLSehir" Type="Self.TBLSehir" Multiplicity="0..1" />
+    <End Role="TBLProje" Type="Self.TBLProje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLSehir">
+        <PropertyRef Name="SehirId" />
+      </Principal>
+      <Dependent Role="TBLProje">
+        <PropertyRef Name="ProjeSehir" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBCONNEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="TblFirma" EntityType="Self.TblFirma" />
+    <EntitySet Name="TblKullanici" EntityType="Self.TblKullanici" />
+    <EntitySet Name="TBLProje" EntityType="Self.TBLProje" />
+    <EntitySet Name="TBLProtokol" EntityType="Self.TBLProtokol" />
+    <EntitySet Name="TBLSehir" EntityType="Self.TBLSehir" />
+    <AssociationSet Name="FK_TblKullanici_TblFirma" Association="Self.FK_TblKullanici_TblFirma">
+      <End Role="TblFirma" EntitySet="TblFirma" />
+      <End Role="TblKullanici" EntitySet="TblKullanici" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLProje_TBLProtokol" Association="Self.FK_TBLProje_TBLProtokol">
+      <End Role="TBLProtokol" EntitySet="TBLProtokol" />
+      <End Role="TBLProje" EntitySet="TBLProje" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLProje_TBLSehir" Association="Self.FK_TBLProje_TBLSehir">
+      <End Role="TBLSehir" EntitySet="TBLSehir" />
+      <End Role="TBLProje" EntitySet="TBLProje" />
+    </AssociationSet>
+    <EntitySet Name="TBLDep" EntityType="DBCONNModel.TBLDep" />
+    <EntitySet Name="TBLMuhSet" EntityType="DBCONNModel.TBLMuh" />
+    <AssociationSet Name="FK_TBLMuh_TBLDep" Association="DBCONNModel.FK_TBLMuh_TBLDep">
+      <End Role="TBLDep" EntitySet="TBLDep" />
+      <End Role="TBLMuh1" EntitySet="TBLMuhSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLMuh_TBLProje" Association="DBCONNModel.FK_TBLMuh_TBLProje">
+      <End Role="TBLProje" EntitySet="TBLProje" />
+      <End Role="TBLMuh1" EntitySet="TBLMuhSet" />
+    </AssociationSet>
+    <EntitySet Name="Tbl_Datax" EntityType="DBCONNModel.Tbl_Datax" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DBCONNModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DBCONNModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <EntityType Name="TBLDep">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TBLMuh" Relationship="DBCONNModel.FK_TBLMuh_TBLDep" FromRole="TBLDep" ToRole="TBLMuh1" />
+  </EntityType>
+  <EntityType Name="TBLMuh">
+    <Key>
+      <PropertyRef Name="MuhId" />
+    </Key>
+    <Property Name="MuhId" Type="Int32" Nullable="false" />
+    <Property Name="MuhAdSoyad" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MuhMail" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MuhSifre" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="MuhPhone" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+    <Property Name="MuhDepartment" Type="Int32" />
+    <Property Name="MuhAdres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MuhDurum" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="MuhAciklama" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TBLDep" Relationship="DBCONNModel.FK_TBLMuh_TBLDep" FromRole="TBLMuh1" ToRole="TBLDep" />
+    <NavigationProperty Name="TBLProje" Relationship="DBCONNModel.FK_TBLMuh_TBLProje" FromRole="TBLMuh1" ToRole="TBLProje" />
+  </EntityType>
+  <Association Name="FK_TBLMuh_TBLDep">
+    <End Type="DBCONNModel.TBLDep" Role="TBLDep" Multiplicity="0..1" />
+    <End Type="DBCONNModel.TBLMuh" Role="TBLMuh1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLDep">
+        <PropertyRef Name="DepartmentID" />
+      </Principal>
+      <Dependent Role="TBLMuh1">
+        <PropertyRef Name="MuhDepartment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLMuh_TBLProje">
+    <End Type="DBCONNModel.TBLProje" Role="TBLProje" Multiplicity="1" />
+    <End Type="DBCONNModel.TBLMuh" Role="TBLMuh1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TBLProje">
+        <PropertyRef Name="ProjeId" />
+      </Principal>
+      <Dependent Role="TBLMuh1">
+        <PropertyRef Name="MuhId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Tbl_Datax">
+    <Key>
+      <PropertyRef Name="Word1" />
+    </Key>
+    <Property Name="id" Type="Int32" />
+    <Property Name="Word1" Type="Int32" Nullable="false" />
+    <Property Name="Word2" Type="Int32" />
+    <Property Name="Word3" Type="Int32" />
+    <Property Name="Word4" Type="Int32" />
+    <Property Name="Word5" Type="Int32" />
+    <Property Name="Word6" Type="Int32" />
+    <Property Name="Word7" Type="Int32" />
+    <Property Name="Word8" Type="Int32" />
+    <Property Name="Word9" Type="Int32" />
+    <Property Name="Int1" Type="Int32" />
+    <Property Name="Int2" Type="Int32" />
+    <Property Name="Int3" Type="Int32" />
+    <Property Name="Int4" Type="Int32" />
+    <Property Name="Int5" Type="Int32" />
+    <Property Name="Int6" Type="Int32" />
+    <Property Name="Int7" Type="Int32" />
+    <Property Name="Int8" Type="Int32" />
+    <Property Name="Int9" Type="Int32" />
+    <Property Name="Real1" Type="Single" />
+    <Property Name="Real2" Type="Single" />
+    <Property Name="Real3" Type="Single" />
+    <Property Name="Real4" Type="Single" />
+    <Property Name="Real5" Type="Single" />
+    <Property Name="Real6" Type="Single" />
+    <Property Name="Real7" Type="Single" />
+    <Property Name="Real8" Type="Single" />
+    <Property Name="Real9" Type="Single" />
+    <Property Name="Bool1" Type="Boolean" />
+    <Property Name="Bool2" Type="Boolean" />
+    <Property Name="Bool3" Type="Boolean" />
+    <Property Name="Bool4" Type="Boolean" />
+    <Property Name="Bool5" Type="Boolean" />
+    <Property Name="Bool6" Type="Boolean" />
+    <Property Name="Bool7" Type="Boolean" />
+    <Property Name="Bool8" Type="Boolean" />
+    <Property Name="Bool9" Type="Boolean" />
+  </EntityType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

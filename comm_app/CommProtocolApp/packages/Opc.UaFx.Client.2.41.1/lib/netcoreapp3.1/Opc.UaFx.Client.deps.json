@@ -1,0 +1,301 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Opc.UaFx.Client/1.0.0": {
+        "dependencies": {
+          "Microsoft.Win32.Registry": "4.7.0",
+          "Newtonsoft.Json": "13.0.3",
+          "Portable.BouncyCastle": "1.8.6",
+          "System.Management": "4.7.0",
+          "System.ServiceModel.Primitives": "4.5.3",
+          "Traeger.Utilities": "1.5.28",
+          "Traeger.Utilities.Licensing": "1.6.31",
+          "Traeger.Utilities.Licensing.Code": "1.8.6",
+          "Traeger.Utilities.Platform": "1.8.3",
+          "Traeger.Utilities.Reflection": "1.5.13",
+          "Traeger.Utilities.Resources": "1.0.3"
+        },
+        "runtime": {
+          "Opc.UaFx.Client.dll": {}
+        }
+      },
+      "Microsoft.NETCore.Platforms/3.1.0": {},
+      "Microsoft.Win32.Registry/4.7.0": {
+        "dependencies": {
+          "System.Security.AccessControl": "4.7.0",
+          "System.Security.Principal.Windows": "4.7.0"
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.3.27908"
+          }
+        }
+      },
+      "Portable.BouncyCastle/1.8.6": {
+        "runtime": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "assemblyVersion": "1.8.6.0",
+            "fileVersion": "1.8.6.1"
+          }
+        }
+      },
+      "System.CodeDom/4.7.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.CodeDom.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.700.19.56404"
+          }
+        }
+      },
+      "System.Management/4.7.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.1.0",
+          "Microsoft.Win32.Registry": "4.7.0",
+          "System.CodeDom": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Management.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.700.19.56404"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp2.0/System.Management.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.700.19.56404"
+          }
+        }
+      },
+      "System.Private.ServiceModel/4.5.3": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.1.0",
+          "System.Reflection.DispatchProxy": "4.5.0",
+          "System.Security.Principal.Windows": "4.7.0"
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netstandard2.0/System.Private.ServiceModel.dll": {
+            "rid": "unix",
+            "assetType": "runtime",
+            "assemblyVersion": "4.5.0.3",
+            "fileVersion": "4.6.26720.1"
+          },
+          "runtimes/win/lib/netstandard2.0/System.Private.ServiceModel.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "4.5.0.3",
+            "fileVersion": "4.6.26720.1"
+          }
+        }
+      },
+      "System.Reflection.DispatchProxy/4.5.0": {},
+      "System.Security.AccessControl/4.7.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.1.0",
+          "System.Security.Principal.Windows": "4.7.0"
+        }
+      },
+      "System.Security.Principal.Windows/4.7.0": {},
+      "System.ServiceModel.Primitives/4.5.3": {
+        "dependencies": {
+          "System.Private.ServiceModel": "4.5.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.ServiceModel.Primitives.dll": {
+            "assemblyVersion": "4.5.0.3",
+            "fileVersion": "4.6.26720.1"
+          },
+          "lib/netstandard2.0/System.ServiceModel.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.26720.1"
+          }
+        }
+      },
+      "Traeger.Utilities/1.5.28": {
+        "dependencies": {
+          "Traeger.Utilities.Resources": "1.0.3"
+        }
+      },
+      "Traeger.Utilities.Licensing/1.6.31": {
+        "dependencies": {
+          "Traeger.Utilities": "1.5.28",
+          "Traeger.Utilities.Reflection": "1.5.13",
+          "Traeger.Utilities.Resources": "1.0.3"
+        }
+      },
+      "Traeger.Utilities.Licensing.Code/1.8.6": {
+        "dependencies": {
+          "Traeger.Utilities": "1.5.28",
+          "Traeger.Utilities.Licensing": "1.6.31",
+          "Traeger.Utilities.Platform": "1.8.3",
+          "Traeger.Utilities.Reflection": "1.5.13"
+        }
+      },
+      "Traeger.Utilities.Platform/1.8.3": {
+        "dependencies": {
+          "Traeger.Utilities": "1.5.28",
+          "Traeger.Utilities.Resources": "1.0.3"
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm/native/libnma.so": {
+            "rid": "linux-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm64/native/libnma.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libnma.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Traeger.Utilities.Reflection/1.5.13": {
+        "dependencies": {
+          "Traeger.Utilities": "1.5.28",
+          "Traeger.Utilities.Resources": "1.0.3"
+        }
+      },
+      "Traeger.Utilities.Resources/1.0.3": {}
+    }
+  },
+  "libraries": {
+    "Opc.UaFx.Client/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.NETCore.Platforms/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
+      "path": "microsoft.netcore.platforms/3.1.0",
+      "hashPath": "microsoft.netcore.platforms.3.1.0.nupkg.sha512"
+    },
+    "Microsoft.Win32.Registry/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KSrRMb5vNi0CWSGG1++id2ZOs/1QhRqROt+qgbEAdQuGjGrFcl4AOl4/exGPUYz2wUnU42nvJqon1T3U0kPXLA==",
+      "path": "microsoft.win32.registry/4.7.0",
+      "hashPath": "microsoft.win32.registry.4.7.0.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "path": "newtonsoft.json/13.0.3",
+      "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
+    },
+    "Portable.BouncyCastle/1.8.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-y+GvZomzhY+Lwu5mMeNmFFYLHiEr2xFDOANhABn/wgg64/QpTzfgpNGPct+pXgQHjmutd363ZCur/91DLaBxOw==",
+      "path": "portable.bouncycastle/1.8.6",
+      "hashPath": "portable.bouncycastle.1.8.6.nupkg.sha512"
+    },
+    "System.CodeDom/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Hs9pw/kmvH3lXaZ1LFKj3pLQsiGfj2xo3sxSzwiLlRL6UcMZUTeCfoJ9Udalvn3yq5dLlPEZzYegrTQ1/LhPOQ==",
+      "path": "system.codedom/4.7.0",
+      "hashPath": "system.codedom.4.7.0.nupkg.sha512"
+    },
+    "System.Management/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IY+uuGhgzWiCg21i8IvQeY/Z7m1tX8VuPF+ludfn7iTCaccTtJo5HkjZbBEL8kbBubKhAKKtNXr7uMtmAc28Pw==",
+      "path": "system.management/4.7.0",
+      "hashPath": "system.management.4.7.0.nupkg.sha512"
+    },
+    "System.Private.ServiceModel/4.5.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ancrQgJagx+yC4SZbuE+eShiEAUIF0E1d21TRSoy1C/rTwafAVcBr/fKibkq5TQzyy9uNil2tx2/iaUxsy0S9g==",
+      "path": "system.private.servicemodel/4.5.3",
+      "hashPath": "system.private.servicemodel.4.5.3.nupkg.sha512"
+    },
+    "System.Reflection.DispatchProxy/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+UW1hq11TNSeb+16rIk8hRQ02o339NFyzMc4ma/FqmxBzM30l1c2IherBB4ld1MNcenS48fz8tbt50OW4rVULA==",
+      "path": "system.reflection.dispatchproxy/4.5.0",
+      "hashPath": "system.reflection.dispatchproxy.4.5.0.nupkg.sha512"
+    },
+    "System.Security.AccessControl/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JECvTt5aFF3WT3gHpfofL2MNNP6v84sxtXxpqhLBCcDRzqsPBmHhQ6shv4DwwN2tRlzsUxtb3G9M3763rbXKDg==",
+      "path": "system.security.accesscontrol/4.7.0",
+      "hashPath": "system.security.accesscontrol.4.7.0.nupkg.sha512"
+    },
+    "System.Security.Principal.Windows/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ojD0PX0XhneCsUbAZVKdb7h/70vyYMDYs85lwEI+LngEONe/17A0cFaRFqZU+sOEidcVswYWikYOQ9PPfjlbtQ==",
+      "path": "system.security.principal.windows/4.7.0",
+      "hashPath": "system.security.principal.windows.4.7.0.nupkg.sha512"
+    },
+    "System.ServiceModel.Primitives/4.5.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Wc9Hgg4Cmqi416zvEgq2sW1YYCGuhwWzspDclJWlFZqY6EGhFUPZU+kVpl5z9kAgrSOQP7/Uiik+PtSQtmq+5A==",
+      "path": "system.servicemodel.primitives/4.5.3",
+      "hashPath": "system.servicemodel.primitives.4.5.3.nupkg.sha512"
+    },
+    "Traeger.Utilities/1.5.28": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dblWriBLvVPVG3aORc3S1pJBFvVYyblx0/Q1jcdYXYSNeBMNCzWBb4LnRNeBjnJGGmwPxGbxs/dNdBswkH48Ig==",
+      "path": "traeger.utilities/1.5.28",
+      "hashPath": "traeger.utilities.1.5.28.nupkg.sha512"
+    },
+    "Traeger.Utilities.Licensing/1.6.31": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CuZpT9gvt5MP0NIf4Pk8SwsBV7LjP7Gemmf/tAtr7ji9tvw+NKgB8yewt8qk77rqb0Y1WH5fwo8IGdRJFv+7qw==",
+      "path": "traeger.utilities.licensing/1.6.31",
+      "hashPath": "traeger.utilities.licensing.1.6.31.nupkg.sha512"
+    },
+    "Traeger.Utilities.Licensing.Code/1.8.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RVl239N071XyYDhZKIQ2MzXorpyPGz4/B+G5sa3PREP/tE9jv/fngDUPpjkdQPCkgKoEANUB5OS0bxXSlpcmmg==",
+      "path": "traeger.utilities.licensing.code/1.8.6",
+      "hashPath": "traeger.utilities.licensing.code.1.8.6.nupkg.sha512"
+    },
+    "Traeger.Utilities.Platform/1.8.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Q5e/Qckjz8soCaCfZhb1odAd3j6ESfw2ulRV6dEv9nGkkC2b191Fyen3g/xNFvqwaEr4C4Ye7/IV0DNqnDeyTA==",
+      "path": "traeger.utilities.platform/1.8.3",
+      "hashPath": "traeger.utilities.platform.1.8.3.nupkg.sha512"
+    },
+    "Traeger.Utilities.Reflection/1.5.13": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iPZG6/pB2HhuX8wXMZU5dLguDW0aFMnyCw24WM3T40tGyuDIl/XrfR3MDZ7hgqMGl7Arz4igXnEMGPUXVWWwJQ==",
+      "path": "traeger.utilities.reflection/1.5.13",
+      "hashPath": "traeger.utilities.reflection.1.5.13.nupkg.sha512"
+    },
+    "Traeger.Utilities.Resources/1.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VbPoWx1eRPul21Xi3bV8fMkqJPJS+B6pGFgzMZpEWf3XHUkiRQwWYFIJnbnSL8KGF7WecWhE1aEqNO7ivRO+qQ==",
+      "path": "traeger.utilities.resources/1.0.3",
+      "hashPath": "traeger.utilities.resources.1.0.3.nupkg.sha512"
+    }
+  }
+}

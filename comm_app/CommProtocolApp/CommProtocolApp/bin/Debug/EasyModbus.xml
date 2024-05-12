@@ -1,0 +1,425 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EasyModbus</name>
+    </assembly>
+    <members>
+        <member name="T:EasyModbus.ModbusClient">
+            <summary>
+            Implements a ModbusClient.
+            </summary>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.#ctor(System.String,System.Int32)">
+            <summary>
+            Constructor which determines the Master ip-address and the Master Port.
+            </summary>
+            <param name="ipAddress">IP-Address of the Master device</param>
+            <param name="port">Listening port of the Master device (should be 502)</param>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.#ctor(System.String)">
+            <summary>
+            Constructor which determines the Serial-Port
+            </summary>
+            <param name="serialPort">Serial-Port Name e.G. "COM1"</param>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.#ctor">
+            <summary>
+            Parameterless constructor
+            </summary>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.Connect">
+            <summary>
+            Establish connection to Master device in case of Modbus TCP. Opens COM-Port in case of Modbus RTU
+            </summary>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.Connect(System.String,System.Int32)">
+            <summary>
+            Establish connection to Master device in case of Modbus TCP.
+            </summary>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.ConvertRegistersToFloat(System.Int32[])">
+            <summary>
+            Converts two ModbusRegisters to Float - Example: EasyModbus.ModbusClient.ConvertRegistersToFloat(modbusClient.ReadHoldingRegisters(19,2))
+            </summary>
+            <param name="registers">Two Register values received from Modbus</param>
+            <returns>Connected float value</returns>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.ConvertRegistersToFloat(System.Int32[],EasyModbus.ModbusClient.RegisterOrder)">
+            <summary>
+            Converts two ModbusRegisters to Float, Registers can by swapped
+            </summary>
+            <param name="registers">Two Register values received from Modbus</param>
+            <param name="registerOrder">Desired Word Order (Low Register first or High Register first</param>
+            <returns>Connected float value</returns>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.ConvertRegistersToInt(System.Int32[])">
+            <summary>
+            Converts two ModbusRegisters to 32 Bit Integer value
+            </summary>
+            <param name="registers">Two Register values received from Modbus</param>
+            <returns>Connected 32 Bit Integer value</returns>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.ConvertRegistersToInt(System.Int32[],EasyModbus.ModbusClient.RegisterOrder)">
+            <summary>
+            Converts two ModbusRegisters to 32 Bit Integer Value - Registers can be swapped
+            </summary>
+            <param name="registers">Two Register values received from Modbus</param>
+            <param name="registerOrder">Desired Word Order (Low Register first or High Register first</param>
+            <returns>Connecteds 32 Bit Integer value</returns>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.ConvertRegistersToLong(System.Int32[])">
+            <summary>
+            Convert four 16 Bit Registers to 64 Bit Integer value Register Order "LowHigh": Reg0: Low Word.....Reg3: High Word, "HighLow": Reg0: High Word.....Reg3: Low Word
+            </summary>
+            <param name="registers">four Register values received from Modbus</param>
+            <returns>64 bit value</returns>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.ConvertRegistersToLong(System.Int32[],EasyModbus.ModbusClient.RegisterOrder)">
+            <summary>
+            Convert four 16 Bit Registers to 64 Bit Integer value - Registers can be swapped
+            </summary>
+            <param name="registers">four Register values received from Modbus</param>
+            <param name="registerOrder">Desired Word Order (Low Register first or High Register first</param>
+            <returns>Connected 64 Bit Integer value</returns>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.ConvertRegistersToDouble(System.Int32[])">
+            <summary>
+            Convert four 16 Bit Registers to 64 Bit double prec. value Register Order "LowHigh": Reg0: Low Word.....Reg3: High Word, "HighLow": Reg0: High Word.....Reg3: Low Word
+            </summary>
+            <param name="registers">four Register values received from Modbus</param>
+            <returns>64 bit value</returns>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.ConvertRegistersToDouble(System.Int32[],EasyModbus.ModbusClient.RegisterOrder)">
+            <summary>
+            Convert four 16 Bit Registers to 64 Bit double prec. value - Registers can be swapped
+            </summary>
+            <param name="registers">four Register values received from Modbus</param>
+            <param name="registerOrder">Desired Word Order (Low Register first or High Register first</param>
+            <returns>Connected double prec. float value</returns>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.ConvertFloatToRegisters(System.Single)">
+            <summary>
+            Converts float to two ModbusRegisters - Example:  modbusClient.WriteMultipleRegisters(24, EasyModbus.ModbusClient.ConvertFloatToTwoRegisters((float)1.22));
+            </summary>
+            <param name="floatValue">Float value which has to be converted into two registers</param>
+            <returns>Register values</returns>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.ConvertFloatToRegisters(System.Single,EasyModbus.ModbusClient.RegisterOrder)">
+            <summary>
+            Converts float to two ModbusRegisters Registers - Registers can be swapped
+            </summary>
+            <param name="floatValue">Float value which has to be converted into two registers</param>
+            <param name="registerOrder">Desired Word Order (Low Register first or High Register first</param>
+            <returns>Register values</returns>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.ConvertIntToRegisters(System.Int32)">
+            <summary>
+            Converts 32 Bit Value to two ModbusRegisters
+            </summary>
+            <param name="intValue">Int value which has to be converted into two registers</param>
+            <returns>Register values</returns>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.ConvertIntToRegisters(System.Int32,EasyModbus.ModbusClient.RegisterOrder)">
+            <summary>
+            Converts 32 Bit Value to two ModbusRegisters Registers - Registers can be swapped
+            </summary>
+            <param name="intValue">Double value which has to be converted into two registers</param>
+            <param name="registerOrder">Desired Word Order (Low Register first or High Register first</param>
+            <returns>Register values</returns>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.ConvertLongToRegisters(System.Int64)">
+            <summary>
+            Converts 64 Bit Value to four ModbusRegisters
+            </summary>
+            <param name="longValue">long value which has to be converted into four registers</param>
+            <returns>Register values</returns>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.ConvertLongToRegisters(System.Int64,EasyModbus.ModbusClient.RegisterOrder)">
+            <summary>
+            Converts 64 Bit Value to four ModbusRegisters - Registers can be swapped
+            </summary>
+            <param name="longValue">long value which has to be converted into four registers</param>
+            <param name="registerOrder">Desired Word Order (Low Register first or High Register first</param>
+            <returns>Register values</returns>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.ConvertDoubleToRegisters(System.Double)">
+            <summary>
+            Converts 64 Bit double prec Value to four ModbusRegisters
+            </summary>
+            <param name="doubleValue">double value which has to be converted into four registers</param>
+            <returns>Register values</returns>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.ConvertDoubleToRegisters(System.Double,EasyModbus.ModbusClient.RegisterOrder)">
+            <summary>
+            Converts 64 Bit double prec. Value to four ModbusRegisters - Registers can be swapped
+            </summary>
+            <param name="doubleValue">double value which has to be converted into four registers</param>
+            <param name="registerOrder">Desired Word Order (Low Register first or High Register first</param>
+            <returns>Register values</returns>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.ConvertRegistersToString(System.Int32[],System.Int32,System.Int32)">
+            <summary>
+            Converts 16 - Bit Register values to String
+            </summary>
+            <param name="registers">Register array received via Modbus</param>
+            <param name="offset">First Register containing the String to convert</param>
+            <param name="stringLength">number of characters in String (must be even)</param>
+            <returns>Converted String</returns>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.ConvertStringToRegisters(System.String)">
+            <summary>
+            Converts a String to 16 - Bit Registers
+            </summary>
+            <param name="registers">Register array received via Modbus</param>
+            <returns>Converted String</returns>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.calculateCRC(System.Byte[],System.UInt16,System.Int32)">
+            <summary>
+            Calculates the CRC16 for Modbus-RTU
+            </summary>
+            <param name="data">Byte buffer to send</param>
+            <param name="numberOfBytes">Number of bytes to calculate CRC</param>
+            <param name="startByte">First byte in buffer to start calculating CRC</param>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.ReadDiscreteInputs(System.Int32,System.Int32)">
+            <summary>
+            Read Discrete Inputs from Server device (FC2).
+            </summary>
+            <param name="startingAddress">First discrete input to read</param>
+            <param name="quantity">Number of discrete Inputs to read</param>
+            <returns>Boolean Array which contains the discrete Inputs</returns>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.ReadCoils(System.Int32,System.Int32)">
+            <summary>
+            Read Coils from Server device (FC1).
+            </summary>
+            <param name="startingAddress">First coil to read</param>
+            <param name="quantity">Numer of coils to read</param>
+            <returns>Boolean Array which contains the coils</returns>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.ReadHoldingRegisters(System.Int32,System.Int32)">
+            <summary>
+            Read Holding Registers from Master device (FC3).
+            </summary>
+            <param name="startingAddress">First holding register to be read</param>
+            <param name="quantity">Number of holding registers to be read</param>
+            <returns>Int Array which contains the holding registers</returns>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.ReadInputRegisters(System.Int32,System.Int32)">
+            <summary>
+            Read Input Registers from Master device (FC4).
+            </summary>
+            <param name="startingAddress">First input register to be read</param>
+            <param name="quantity">Number of input registers to be read</param>
+            <returns>Int Array which contains the input registers</returns>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.WriteSingleCoil(System.Int32,System.Boolean)">
+            <summary>
+            Write single Coil to Master device (FC5).
+            </summary>
+            <param name="startingAddress">Coil to be written</param>
+            <param name="value">Coil Value to be written</param>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.WriteSingleRegister(System.Int32,System.Int32)">
+            <summary>
+            Write single Register to Master device (FC6).
+            </summary>
+            <param name="startingAddress">Register to be written</param>
+            <param name="value">Register Value to be written</param>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.WriteMultipleCoils(System.Int32,System.Boolean[])">
+            <summary>
+            Write multiple coils to Master device (FC15).
+            </summary>
+            <param name="startingAddress">First coil to be written</param>
+            <param name="values">Coil Values to be written</param>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.WriteMultipleRegisters(System.Int32,System.Int32[])">
+            <summary>
+            Write multiple registers to Master device (FC16).
+            </summary>
+            <param name="startingAddress">First register to be written</param>
+            <param name="values">register Values to be written</param>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.ReadWriteMultipleRegisters(System.Int32,System.Int32,System.Int32,System.Int32[])">
+            <summary>
+            Read/Write Multiple Registers (FC23).
+            </summary>
+            <param name="startingAddressRead">First input register to read</param>
+            <param name="quantityRead">Number of input registers to read</param>
+            <param name="startingAddressWrite">First input register to write</param>
+            <param name="values">Values to write</param>
+            <returns>Int Array which contains the Holding registers</returns>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.Disconnect">
+            <summary>
+            Close connection to Master Device.
+            </summary>
+        </member>
+        <member name="M:EasyModbus.ModbusClient.Finalize">
+            <summary>
+            Destructor - Close connection to Master Device.
+            </summary>
+        </member>
+        <member name="P:EasyModbus.ModbusClient.Connected">
+            <summary>
+            Returns "TRUE" if Client is connected to Server and "FALSE" if not. In case of Modbus RTU returns if COM-Port is opened
+            </summary>
+        </member>
+        <member name="P:EasyModbus.ModbusClient.IPAddress">
+            <summary>
+            Gets or Sets the IP-Address of the Server.
+            </summary>
+        </member>
+        <member name="P:EasyModbus.ModbusClient.Port">
+            <summary>
+            Gets or Sets the Port were the Modbus-TCP Server is reachable (Standard is 502).
+            </summary>
+        </member>
+        <member name="P:EasyModbus.ModbusClient.UDPFlag">
+            <summary>
+            Gets or Sets the UDP-Flag to activate Modbus UDP.
+            </summary>
+        </member>
+        <member name="P:EasyModbus.ModbusClient.UnitIdentifier">
+            <summary>
+            Gets or Sets the Unit identifier in case of serial connection (Default = 0)
+            </summary>
+        </member>
+        <member name="P:EasyModbus.ModbusClient.Baudrate">
+            <summary>
+            Gets or Sets the Baudrate for serial connection (Default = 9600)
+            </summary>
+        </member>
+        <member name="P:EasyModbus.ModbusClient.Parity">
+            <summary>
+            Gets or Sets the of Parity in case of serial connection
+            </summary>
+        </member>
+        <member name="P:EasyModbus.ModbusClient.StopBits">
+            <summary>
+            Gets or Sets the number of stopbits in case of serial connection
+            </summary>
+        </member>
+        <member name="P:EasyModbus.ModbusClient.ConnectionTimeout">
+            <summary>
+            Gets or Sets the connection Timeout in case of ModbusTCP connection
+            </summary>
+        </member>
+        <member name="P:EasyModbus.ModbusClient.SerialPort">
+            <summary>
+            Gets or Sets the serial Port
+            </summary>
+        </member>
+        <member name="P:EasyModbus.ModbusClient.LogFileFilename">
+            <summary>
+            Gets or Sets the Filename for the LogFile
+            </summary>
+        </member>
+        <member name="T:EasyModbus.Exceptions.SerialPortNotOpenedException">
+            <summary>
+            Exception to be thrown if serial port is not opened
+            </summary>
+        </member>
+        <member name="T:EasyModbus.Exceptions.ConnectionException">
+            <summary>
+            Exception to be thrown if Connection to Modbus device failed
+            </summary>
+        </member>
+        <member name="T:EasyModbus.Exceptions.FunctionCodeNotSupportedException">
+            <summary>
+            Exception to be thrown if Modbus Server returns error code "Function code not supported"
+            </summary>
+        </member>
+        <member name="T:EasyModbus.Exceptions.QuantityInvalidException">
+            <summary>
+            Exception to be thrown if Modbus Server returns error code "quantity invalid"
+            </summary>
+        </member>
+        <member name="T:EasyModbus.Exceptions.StartingAddressInvalidException">
+            <summary>
+            Exception to be thrown if Modbus Server returns error code "starting adddress and quantity invalid"
+            </summary>
+        </member>
+        <member name="T:EasyModbus.Exceptions.ModbusException">
+            <summary>
+            Exception to be thrown if Modbus Server returns error code "Function Code not executed (0x04)"
+            </summary>
+        </member>
+        <member name="T:EasyModbus.Exceptions.CRCCheckFailedException">
+            <summary>
+            Exception to be thrown if CRC Check failed
+            </summary>
+        </member>
+        <member name="T:EasyModbus.ModbusProtocol">
+            <summary>
+            Modbus Protocol informations.
+            </summary>
+        </member>
+        <member name="P:EasyModbus.TCPHandler.LocalIPAddress">
+            When making a server TCP listen socket, will listen to this IP address.
+        </member>
+        <member name="M:EasyModbus.TCPHandler.#ctor(System.Int32)">
+            <summary>
+            Listen to all network interfaces.
+            </summary>
+            <param name="port">TCP port to listen</param>
+        </member>
+        <member name="M:EasyModbus.TCPHandler.#ctor(System.Net.IPAddress,System.Int32)">
+            <summary>
+            Listen to a specific network interface.
+            </summary>
+            <param name="localIPAddress">IP address of network interface to listen</param>
+            <param name="port">TCP port to listen</param>
+        </member>
+        <member name="T:EasyModbus.ModbusServer">
+            <summary>
+            Modbus TCP Server.
+            </summary>
+        </member>
+        <member name="P:EasyModbus.ModbusServer.LocalIPAddress">
+            <summary>
+            When creating a TCP or UDP socket, the local IP address to attach to.
+            </summary>
+        </member>
+        <member name="P:EasyModbus.ModbusServer.LogFileFilename">
+            <summary>
+            Gets or Sets the Filename for the LogFile
+            </summary>
+        </member>
+        <member name="T:EasyModbus.StoreLogData">
+            <summary>
+            Store Log-Data in a File
+            </summary>
+        </member>
+        <member name="M:EasyModbus.StoreLogData.#ctor">
+            <summary>
+            Private constructor; Ensures the access of the class only via "instance"
+            </summary>
+        </member>
+        <member name="P:EasyModbus.StoreLogData.Instance">
+            <summary>
+            Returns the instance of the class (singleton)
+            </summary>
+            <returns>instance (Singleton)</returns>
+        </member>
+        <member name="M:EasyModbus.StoreLogData.Store(System.String)">
+            <summary>
+            Store message in Log-File
+            </summary>
+            <param name="message">Message to append to the Log-File</param>
+        </member>
+        <member name="M:EasyModbus.StoreLogData.Store(System.String,System.DateTime)">
+            <summary>
+            Store message in Log-File including Timestamp
+            </summary>
+            <param name="message">Message to append to the Log-File</param>
+            <param name="timestamp">Timestamp to add to the same Row</param>
+        </member>
+        <member name="P:EasyModbus.StoreLogData.Filename">
+            <summary>
+            Gets or Sets the Filename to Store Strings in a File
+            </summary>
+        </member>
+    </members>
+</doc>

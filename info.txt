@@ -1,0 +1,23 @@
+----	Requirements  ----
+
+Visuel Studio 2017 
+SQL Server Management Studio
+DevExpress 20.1.7
+OPC UaExpert
+Siemens Tia Portal V17
+S7-PLCSIM Advanced V4.0
+Nettoplcsim-S7o-v-1-2-5-0
+
+
+
+!!NOTE
+The communication settings are located in the information section within the application.
+Carry out your work according to the commands found there.
+
+
+yasinbulut_25@hotmail.com
+https://www.linkedin.com/in/yasinbulut/
+https://github.com/YasinBulut
+
+
+ 

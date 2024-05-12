@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2c023ce225be4f0c9db95c96fdbdcba5" Name="Diagram1" ZoomLevel="102">
+        <EntityTypeShape EntityType="DBCONNModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBCONNModel.TblFirma" Width="1.5" PointX="2.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBCONNModel.TblKullanici" Width="1.5" PointX="5" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBCONNModel.TBLProje" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBCONNModel.TBLProtokol" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBCONNModel.TBLSehir" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="DBCONNModel.FK_TblKullanici_TblFirma" ManuallyRouted="false" />
+        <AssociationConnector Association="DBCONNModel.FK_TBLProje_TBLProtokol" ManuallyRouted="false" />
+        <AssociationConnector Association="DBCONNModel.FK_TBLProje_TBLSehir" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DBCONNModel.TBLDep" Width="1.5" PointX="6" PointY="7.75" />
+        <EntityTypeShape EntityType="DBCONNModel.TBLMuh" Width="1.5" PointX="8" PointY="0.625" />
+        <AssociationConnector Association="DBCONNModel.FK_TBLMuh_TBLDep" />
+        <AssociationConnector Association="DBCONNModel.FK_TBLMuh_TBLProje" />
+        <EntityTypeShape EntityType="DBCONNModel.Tbl_Datax" Width="1.5" PointX="8.375" PointY="4.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

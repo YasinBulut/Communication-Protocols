@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBCONNModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBCONN.dbo.Tbl_Datax' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Tbl_Datax">
+    <Key>
+      <PropertyRef Name="Word1" />
+    </Key>
+    <Property Name="id" Type="int" />
+    <Property Name="Word1" Type="int" Nullable="false" />
+    <Property Name="Word2" Type="int" />
+    <Property Name="Word3" Type="int" />
+    <Property Name="Word4" Type="int" />
+    <Property Name="Word5" Type="int" />
+    <Property Name="Word6" Type="int" />
+    <Property Name="Word7" Type="int" />
+    <Property Name="Word8" Type="int" />
+    <Property Name="Word9" Type="int" />
+    <Property Name="Int1" Type="int" />
+    <Property Name="Int2" Type="int" />
+    <Property Name="Int3" Type="int" />
+    <Property Name="Int4" Type="int" />
+    <Property Name="Int5" Type="int" />
+    <Property Name="Int6" Type="int" />
+    <Property Name="Int7" Type="int" />
+    <Property Name="Int8" Type="int" />
+    <Property Name="Int9" Type="int" />
+    <Property Name="Real1" Type="real" />
+    <Property Name="Real2" Type="real" />
+    <Property Name="Real3" Type="real" />
+    <Property Name="Real4" Type="real" />
+    <Property Name="Real5" Type="real" />
+    <Property Name="Real6" Type="real" />
+    <Property Name="Real7" Type="real" />
+    <Property Name="Real8" Type="real" />
+    <Property Name="Real9" Type="real" />
+    <Property Name="Bool1" Type="bit" />
+    <Property Name="Bool2" Type="bit" />
+    <Property Name="Bool3" Type="bit" />
+    <Property Name="Bool4" Type="bit" />
+    <Property Name="Bool5" Type="bit" />
+    <Property Name="Bool6" Type="bit" />
+    <Property Name="Bool7" Type="bit" />
+    <Property Name="Bool8" Type="bit" />
+    <Property Name="Bool9" Type="bit" />
+  </EntityType>
+  <EntityType Name="TBLDep">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmentAd" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TblFirma">
+    <Key>
+      <PropertyRef Name="FirmaId" />
+    </Key>
+    <Property Name="FirmaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirmaAd" Type="nvarchar" MaxLength="30" />
+    <Property Name="FirmaSehir" Type="int" />
+    <Property Name="FirmaMail" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'DBCONN.dbo.TBLHata' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TBLHata">
+          <Property Name="HataId" Type="int" />
+          <Property Name="HataCount" Type="int" />
+          <Property Name="HataGün" Type="nvarchar" MaxLength="15" />
+        </EntityType>-->
+  <EntityType Name="TblKullanici">
+    <Key>
+      <PropertyRef Name="KullaniciId" />
+    </Key>
+    <Property Name="KullaniciId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KullaniciAd" Type="nvarchar" MaxLength="50" />
+    <Property Name="KullaniciSifre" Type="nvarchar" MaxLength="50" />
+    <Property Name="KullaniciFirma" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBCONN.dbo.TBLMuh' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TBLMuh">
+    <Key>
+      <PropertyRef Name="MuhId" />
+    </Key>
+    <Property Name="MuhId" Type="int" Nullable="false" />
+    <Property Name="MuhAdSoyad" Type="nvarchar" MaxLength="20" />
+    <Property Name="MuhMail" Type="nvarchar" MaxLength="20" />
+    <Property Name="MuhSifre" Type="nchar" MaxLength="10" />
+    <Property Name="MuhPhone" Type="nvarchar" MaxLength="14" />
+    <Property Name="MuhDepartment" Type="int" />
+    <Property Name="MuhAdres" Type="nvarchar" MaxLength="50" />
+    <Property Name="MuhDurum" Type="nchar" MaxLength="10" />
+    <Property Name="MuhAciklama" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TBLProje">
+    <Key>
+      <PropertyRef Name="ProjeId" />
+    </Key>
+    <Property Name="ProjeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjeAd" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProjeSehir" Type="int" />
+    <Property Name="ProjeMuh" Type="int" />
+    <Property Name="ProjeProtokol" Type="int" />
+    <Property Name="ProjeAciklama" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProjeDurum" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="TBLProtokol">
+    <Key>
+      <PropertyRef Name="ProtokolId" />
+    </Key>
+    <Property Name="ProtokolId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProtokAd" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TBLSehir">
+    <Key>
+      <PropertyRef Name="SehirId" />
+    </Key>
+    <Property Name="SehirId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SehirAd" Type="nvarchar" MaxLength="50" />
+    <Property Name="SehirUlke" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_TblKullanici_TblFirma">
+    <End Role="TblFirma" Type="Self.TblFirma" Multiplicity="0..1" />
+    <End Role="TblKullanici" Type="Self.TblKullanici" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblFirma">
+        <PropertyRef Name="FirmaId" />
+      </Principal>
+      <Dependent Role="TblKullanici">
+        <PropertyRef Name="KullaniciFirma" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLMuh_TBLDep">
+    <End Role="TBLDep" Type="Self.TBLDep" Multiplicity="0..1" />
+    <End Role="TBLMuh" Type="Self.TBLMuh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLDep">
+        <PropertyRef Name="DepartmentID" />
+      </Principal>
+      <Dependent Role="TBLMuh">
+        <PropertyRef Name="MuhDepartment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLProje_TBLProtokol">
+    <End Role="TBLProtokol" Type="Self.TBLProtokol" Multiplicity="0..1" />
+    <End Role="TBLProje" Type="Self.TBLProje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLProtokol">
+        <PropertyRef Name="ProtokolId" />
+      </Principal>
+      <Dependent Role="TBLProje">
+        <PropertyRef Name="ProjeProtokol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLProje_TBLSehir">
+    <End Role="TBLSehir" Type="Self.TBLSehir" Multiplicity="0..1" />
+    <End Role="TBLProje" Type="Self.TBLProje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLSehir">
+        <PropertyRef Name="SehirId" />
+      </Principal>
+      <Dependent Role="TBLProje">
+        <PropertyRef Name="ProjeSehir" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="DBCONNModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLDep" EntityType="Self.TBLDep" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblFirma" EntityType="Self.TblFirma" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblKullanici" EntityType="Self.TblKullanici" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLProje" EntityType="Self.TBLProje" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLProtokol" EntityType="Self.TBLProtokol" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLSehir" EntityType="Self.TBLSehir" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tbl_Datax" EntityType="Self.Tbl_Datax" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Tbl_Datax].[id] AS [id], 
+    [Tbl_Datax].[Word1] AS [Word1], 
+    [Tbl_Datax].[Word2] AS [Word2], 
+    [Tbl_Datax].[Word3] AS [Word3], 
+    [Tbl_Datax].[Word4] AS [Word4], 
+    [Tbl_Datax].[Word5] AS [Word5], 
+    [Tbl_Datax].[Word6] AS [Word6], 
+    [Tbl_Datax].[Word7] AS [Word7], 
+    [Tbl_Datax].[Word8] AS [Word8], 
+    [Tbl_Datax].[Word9] AS [Word9], 
+    [Tbl_Datax].[Int1] AS [Int1], 
+    [Tbl_Datax].[Int2] AS [Int2], 
+    [Tbl_Datax].[Int3] AS [Int3], 
+    [Tbl_Datax].[Int4] AS [Int4], 
+    [Tbl_Datax].[Int5] AS [Int5], 
+    [Tbl_Datax].[Int6] AS [Int6], 
+    [Tbl_Datax].[Int7] AS [Int7], 
+    [Tbl_Datax].[Int8] AS [Int8], 
+    [Tbl_Datax].[Int9] AS [Int9], 
+    [Tbl_Datax].[Real1] AS [Real1], 
+    [Tbl_Datax].[Real2] AS [Real2], 
+    [Tbl_Datax].[Real3] AS [Real3], 
+    [Tbl_Datax].[Real4] AS [Real4], 
+    [Tbl_Datax].[Real5] AS [Real5], 
+    [Tbl_Datax].[Real6] AS [Real6], 
+    [Tbl_Datax].[Real7] AS [Real7], 
+    [Tbl_Datax].[Real8] AS [Real8], 
+    [Tbl_Datax].[Real9] AS [Real9], 
+    [Tbl_Datax].[Bool1] AS [Bool1], 
+    [Tbl_Datax].[Bool2] AS [Bool2], 
+    [Tbl_Datax].[Bool3] AS [Bool3], 
+    [Tbl_Datax].[Bool4] AS [Bool4], 
+    [Tbl_Datax].[Bool5] AS [Bool5], 
+    [Tbl_Datax].[Bool6] AS [Bool6], 
+    [Tbl_Datax].[Bool7] AS [Bool7], 
+    [Tbl_Datax].[Bool8] AS [Bool8], 
+    [Tbl_Datax].[Bool9] AS [Bool9]
+    FROM [dbo].[Tbl_Datax] AS [Tbl_Datax]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBLMuh" EntityType="Self.TBLMuh" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TBLMuh].[MuhId] AS [MuhId], 
+    [TBLMuh].[MuhAdSoyad] AS [MuhAdSoyad], 
+    [TBLMuh].[MuhMail] AS [MuhMail], 
+    [TBLMuh].[MuhSifre] AS [MuhSifre], 
+    [TBLMuh].[MuhPhone] AS [MuhPhone], 
+    [TBLMuh].[MuhDepartment] AS [MuhDepartment], 
+    [TBLMuh].[MuhAdres] AS [MuhAdres], 
+    [TBLMuh].[MuhDurum] AS [MuhDurum], 
+    [TBLMuh].[MuhAciklama] AS [MuhAciklama]
+    FROM [dbo].[TBLMuh] AS [TBLMuh]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_TblKullanici_TblFirma" Association="Self.FK_TblKullanici_TblFirma">
+      <End Role="TblFirma" EntitySet="TblFirma" />
+      <End Role="TblKullanici" EntitySet="TblKullanici" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLMuh_TBLDep" Association="Self.FK_TBLMuh_TBLDep">
+      <End Role="TBLDep" EntitySet="TBLDep" />
+      <End Role="TBLMuh" EntitySet="TBLMuh" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLProje_TBLProtokol" Association="Self.FK_TBLProje_TBLProtokol">
+      <End Role="TBLProtokol" EntitySet="TBLProtokol" />
+      <End Role="TBLProje" EntitySet="TBLProje" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLProje_TBLSehir" Association="Self.FK_TBLProje_TBLSehir">
+      <End Role="TBLSehir" EntitySet="TBLSehir" />
+      <End Role="TBLProje" EntitySet="TBLProje" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
